@@ -1,16 +1,17 @@
 <?php
-  get_header(); 
-  aitech_mainbody_before();
+
+get_header();
+aitech_mainbody_before();
 ?>
 
-<div class="container-fluid pt-5 bg-primary hero-header mb-5">
-  <?php
-     aitech_mainbody_start();
-    get_template_part('loops/index-loop');
-   
-  ?>
-</div>
+    <div class="container-fluid pt-5 bg-primary hero-header mb-5">
+        <?php
+        aitech_mainbody_start();
+        get_template_part('loops/index-loop');
 
-<?php 
-  get_footer(); 
+        ?>
+    </div>
+
+<?php
+get_footer();
 ?>

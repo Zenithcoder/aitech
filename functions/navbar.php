@@ -1,23 +1,29 @@
 <?php
+
 /*
  * Bootstrap Navbar Walker_Nav_menu
  */
- class aitech_walker_nav_menu extends Walker_Nav_Menu {
+
+class aitech_walker_nav_menu extends Walker_Nav_Menu
+{
 
     // Start the level (for submenus)
-    function start_lvl(&$output, $depth = 0, $args = array()) {
+    function start_lvl(&$output, $depth = 0, $args = array())
+    {
         $indent = str_repeat("\t", $depth); // Indent the HTML
         $output .= "\n$indent<div class=\"dropdown-menu bg-light mt-2\">\n"; // Bootstrap dropdown menu
     }
 
     // End the level (for submenus)
-    function end_lvl(&$output, $depth = 0, $args = array()) {
+    function end_lvl(&$output, $depth = 0, $args = array())
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</div>\n";
     }
 
     // Start the element (for each menu item)
-    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+    {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
         // Add classes to the <li> element
@@ -68,7 +74,8 @@
     }
 
     // End the element (for each menu item)
-    function end_el(&$output, $item, $depth = 0, $args = array()) {
+    function end_el(&$output, $item, $depth = 0, $args = array())
+    {
         $output .= "</li>\n";
     }
 }
